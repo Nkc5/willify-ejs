@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+
+    <style>
+      #container {
+        text-align: center;
+      }
+
+      #container form .input {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      form input {
+        width: 80%;
+        height: 30px;
+      }
+
+      form .sibling {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      form .sibling input {
+        width: 80%;
+        height: 30px;
+      }
+      form .sibling select{
+        width: 80%;
+        height: 40px;
+      }
+
+      h2{
+        margin-top: 40px;
+      }
+
+      form .children{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .children input{
+        width: 80%;
+        height: 30px;
+      }
+      .children select{
+        width: 80%;
+        height: 40px;
+      }
+
+      
+#button {
+        position: absolute;
+        bottom: 50px;
+        display: flex;
+        gap: 1100px;
+        margin: 0 30px;
+      }
+
+      
+      #button a i{
+        font-size: 50px;
+        color: black;
+      }
+      
+      .remove-sibling{
+        width: 70px;
+        align-items: center;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="container">
+
+      <%- include('./stepper.ejs') %>
+
+      <h2>Let's get to know your family</h2>
+
+      <form action="">
+        <div class="input">
+          <input type="text" placeholder="Father Name.." />
+          <input type="text" placeholder="Father Age.." />
+          <input type="text" placeholder="Mother Name.." />
+          <input type="text" placeholder="Mother Age.." />
+          <input type="text" placeholder="Spouse Name.." />
+          <input type="text" placeholder="Spouse Age.." />
+        </div>
+
+        <h2>My Siblings Are</h2>
+        <button id="addSibling">Add</button>
+        <div id="sibling-container">
+        <div class="sibling">
+          <select name="" id="">
+            <option value="">Select Sibling</option>
+            <option value="Brother">Brother</option>
+            <option value="Sister">Sister</option>
+          </select>
+          <input type="text" placeholder="Sibling Name" />
+          <input type="text" placeholder="Sibling Age" />
+        </div>
+        
+        <div class="addSibling"></div>
+        
+      </div>
+
+        <h2>My children's Are</h2>
+        <button id="addChildren">Add</button>
+
+        <div id="children-container">
+        <div class="children">
+          <select name="" id="">
+            <option value="">Select Children</option>
+            <option value="Son">Son</option>
+            <option value="Daughter">Daughter</option>
+          </select>
+          <input type="text" placeholder="Children Name" />
+          <input type="text" placeholder="Children Age" />
+        </div>
+      </div>
+
+      </form>
+
+      <div id="button">
+        <a href="/step/1"><i class="bi bi-arrow-left-square"></i></a>
+        <a href="/step/3"><i class="bi bi-arrow-right-square"></i></a>
+      </div>
+    </div>
+
+
+    </div>
+
+    <script>
+
+    
+
+
+
+document.getElementById('addSibling').addEventListener('click', function(e){
+  e.preventDefault();
+const siblingContainer = document.getElementById('sibling-container');
+        const newSibling = document.querySelector('.sibling').cloneNode(true);
+
+        newSibling.querySelectorAll('input').forEach(input => input.value ='');
+        siblingContainer.appendChild(newSibling);
+        
+        const removeButton = document.createElement('button');
+        removeButton.textContent = "remove";
+        removeButton.classList.add('remove-sibling');
+        
+        newSibling.appendChild(removeButton);
+
+        removeButton.addEventListener('click', ()=>{
+          siblingContainer.removeChild(newSibling);
+        })
+
+})
+      
+
+document.getElementById('addChildren').addEventListener('click', (e)=>{
+
+  e.preventDefault();
+
+  const childContainer = document.getElementById('child-container');
+  const children = document.querySelector('.children').cloneNode(true);
+
+  children.querySelectorAll('input').forEach(input=> input.value = '');
+  console.log("children", children);
+  childContainer.appendChild(children);
+
+  const removeButton = document.createElement('button');
+  removeButton.textContent = 'remove';
+  children.appendChild(removeButton);
+
+  removeButton.addEventListener('click', ()=>{
+    childContainer.removeChild(children);
+  })
+
+})
+    </script>
+  </body>
+</html>

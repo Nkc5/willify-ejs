@@ -1,0 +1,24 @@
+#container {
+  text-align: center;
+}
+
+#container h2{
+    margin: 30px auto;
+    font-size: 40px;
+}
+
+div form {
+  display: grid;
+  margin: 100px auto;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+form input {
+  height: 40px;
+  width: 80%;
+}
+form select {
+  height: 40px;
+  width: 81%;
+}

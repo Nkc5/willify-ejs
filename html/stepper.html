@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<link rel="stylesheet" href="./stepper_style.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+
+    <div id="container">
+
+        <div class="stepper">
+
+            <ul role="tablist">
+                <li role="presentation" class="active"><i class="bi bi-person"></i> <a href="#step1" role="tab" aria-controls="tab1" aria-selected="true"> About Me </a> </li>
+
+                <!-- <li role="presentation" > <i class="bi bi-heart"></i> <a href="#step2" role="tab" aria-controls="tab2" aria-selected="false"> My Loved Ones</a> </li> -->
+
+                <li role="presentation" > <i class="bi bi-heart"></i> <button onclick= handleStepTwo()>My Loved Ones</button>  </li>
+
+                <li role="presentation" > <i class="bi bi-people"></i> <a href="#step3" role="tab" aria-controls="tab3" aria-selected="false"> Add Benificiary</a> </li>
+
+                <li role="presentation" ><i class="bi bi-building"></i> <a href="#step4" role="tab" aria-controls="tab4" aria-selected="false"> Add Assets</a> </li>
+
+                <li role="presentation" > <i class="bi bi-pen"></i> <a href="#step5" role="tab" aria-controls="tab5" aria-selected="false"> Asset Details </a> </li>
+
+                <li role="presentation" > <i class="bi bi-currency-dollar"></i> <a href="#step6" role="tab" aria-controls="tab6" aria-selected="false">Shares </a> </li>
+
+                <li role="presentation" ><i class="bi bi-hand-thumbs-up"></i> <a href="#step7" role="tab" aria-controls="tab7" aria-selected="false">Completing My Will</a> </li>
+
+                <li role="presentation" > <i class="bi bi-people"></i> <a href="#step8" role="tab" aria-controls="tab8" aria-selected="false">Executor</a> </li>
+
+                <li role="presentation" > <i class="bi bi-credit-card"></i> <a href="#step9" role="tab" aria-controls="tab9" aria-selected="false">Payment Info</a> </li>
+
+                <li role="presentation" > <i class="bi bi-file-earmark-pdf"></i> <a href="#step10" role="tab" aria-controls="tab10" aria-selected="false">Will</a> </li>
+                
+            </ul>
+
+            <div class="step-content">
+
+                <div id="step1" role="tabpanel" aria-labelledby="tab-step1" > <p>Enter your information here.</p> </div>
+
+                <div id="step1" role="tabpanel" aria-labelledby="tab-step2" > <p> Step 2</p> </div>
+
+                <div id="step1" role="tabpanel" aria-labelledby="tab-step3" > <p> Step 3</p> </div>
+            </div>
+
+        </div>
+
+    </div>
+    
+
+
+    <script src="./stepper_script.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../public/css/step1.css">
+
+    <style>
+        #container {
+  text-align: center;
+}
+
+#container h2{
+    margin: 30px auto;
+    font-size: 40px;
+}
+
+div form {
+  display: grid;
+  margin: 100px auto;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+form input {
+  height: 40px;
+  width: 80%;
+}
+form select {
+  height: 40px;
+  width: 81%;
+}
+
+
+#button {
+        position: absolute;
+        bottom: 50px;
+        right: 50px;
+        margin: 0 30px;
+      }
+
+      #button button {
+        width: 100px;
+        height: 50px;
+        border: none;
+        cursor: pointer;
+      }
+      
+    </style>
+</head>
+<body>
+    
+    <div id="container">
+
+        <%- include('./stepper') %>
+        <h2>Welcome ! Let's quickly get to know you</h2>
+
+        <form action="">
+            <input type="text" placeholder="Full Name...">
+            <input type="datetime-local" name="" id="" placeholder="">
+            <input type="text" placeholder="Gender">
+
+            <select name="" id="">
+                <option value="">Religion</option>
+                <option value="Hindu">Hindu</option>
+                <option value="Muslim">Muslim</option>
+                <option value="Christian">Christian</option>
+            </select>
+
+            <select name="" id="">
+                <option value="">Maritarial Status</option>
+                <option value="Married">Married</option>
+                <option value="Unmarried">Unmarried</option>
+            </select>
+
+            <select name="" id="">
+                <option value="">Occupation</option>
+                <option value="Employed">Employed</option>
+                <option value="Unemployed">Unemployed</option>
+            </select>
+
+            <input type="text" placeholder="Address">
+            <input type="text" placeholder="Pincode">
+        </form>
+
+        
+      <div id="button">
+        <button onclick="handleNext()">next</button>
+      </div>
+    </div>
+
+    <script>
+        function handleNext(){
+            window.location.href = '/step/2';
+        }
+
+    </script>
+    </div>
+</body>
+</html>
