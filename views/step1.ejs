@@ -57,7 +57,8 @@ form select {
         <%- include('./stepper') %>
         <h2>Welcome ! Let's quickly get to know you</h2>
 
-        <form action="">
+        <form id="myForm" action="/server/about-me" method="post" enctype="multipart/form-data" onsubmit="handleSubmit()" >
+
             <input type="text" placeholder="Full Name...">
             <input type="datetime-local" name="" id="" placeholder="">
             <input type="text" placeholder="Gender">
@@ -82,18 +83,26 @@ form select {
             </select>
 
             <input type="text" placeholder="Address">
-            <input type="text" placeholder="Pincode">
-        </form>
+            <input type="text" name="Pincode" placeholder="Pincode">
 
-        
-      <div id="button">
-        <button onclick="handleNext()">next</button>
-      </div>
+            
+            <div id="button">
+              <button type="submit">next</button>
+            </div>
+            
+          </form>
+
+     
     </div>
 
     <script>
-        function handleNext(){
-            window.location.href = '/step/2';
+        async function handleSubmit(){
+          
+         function navigate(){
+           window.location.href = '/step/2';
+            }
+
+            setTimeout(navigate, 3000);
         }
 
     </script>

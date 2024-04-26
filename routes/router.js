@@ -1,7 +1,11 @@
 
 const router = require('express').Router();
+const Controller = require('../controller/controller.js');
 
-router.post('/about-me')
+
+const controller = new Controller();
+
+router.post('/about-me', controller.aboutMe);
 
 
 module.exports = router;
